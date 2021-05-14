@@ -11,10 +11,16 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'OutletMapController@index');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+/*
+ * Outlets Routes
+ */
+Route::get('/our_outlets', 'OutletMapController@index')->name('outlet_map.index');
+Route::resource('outlets','OutletController',);
+Route::resource('navettes','NavetteController',);
+Route::resource('chauffeurs','ChauffeurController',);

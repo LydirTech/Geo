@@ -2,8 +2,8 @@
 
 namespace App\Providers;
 
-use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -13,7 +13,8 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        // 'App\Model' => 'App\Policies\ModelPolicy',
+        'App\Outlet' => 'App\Policies\OutletPolicy',
+        'App\Model'  => 'App\Policies\ModelPolicy',
     ];
 
     /**
@@ -25,6 +26,16 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        Gate::define('manage_outlet', function () {
+            return auth()->check();
+        });
+
+        Gate::define('manage_navette', function () {
+            return auth()->check();
+        });
+
+        Gate::define('manage_chauffeur', function () {
+            return auth()->check();
+        });
     }
 }

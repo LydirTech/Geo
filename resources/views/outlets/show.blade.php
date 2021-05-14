@@ -68,5 +68,6 @@
 
     L.marker([{{ $outlet->latitude }}, {{ $outlet->longitude }}]).addTo(map)
         .bindPopup('{!! $outlet->map_popup_content !!}');
+
 </script>
 @endpush

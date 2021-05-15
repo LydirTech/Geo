@@ -6,12 +6,12 @@
 <div class="row justify-content-center">
     <div class="col-md-6">
         <div class="card">
-            <div class="card-header">{{ __('chauffeur.create') }}</div>
+            <div class="card-header">Ajouté chauffeur</div>
             <form method="POST" action="{{ route('chauffeurs.store') }}" accept-charset="UTF-8">
                 {{ csrf_field() }}
                 <div class="card-body">
                     <div class="form-group">
-                        <label for="name" class="control-label">{{ __('chauffeur.name') }}</label>
+                        <label for="name" class="control-label">Nom</label>
                         <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required>
                         {!! $errors->first('name', '<span class="invalid-feedback" role="alert">:message</span>') !!}
                     </div>

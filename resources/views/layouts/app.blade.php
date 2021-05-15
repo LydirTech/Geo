@@ -21,8 +21,8 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Lydirtech') }}
+                <a class="navbar-brand" href="{{ url('/home') }}">
+                    Yalidine Geo
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -35,7 +35,6 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
-                        <li class="nav-item"><a class="nav-link" href="{{ route('outlet_map.index') }}">{{ __('menu.our_outlets') }}</a></li>
                         @guest
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -47,13 +46,16 @@
                             </li>
                         @else
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('chauffeurs.index') }}">{{ __('chauffeur.list') }}</a>
+                                <a class="nav-link" href="{{ route('home') }}">Aceuil</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('navettes.index') }}">{{ __('navette.list') }}</a>
+                                <a class="nav-link" href="{{ route('chauffeurs.index') }}"> Gestion chauffeurs </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('outlets.index') }}">{{ __('outlet.list') }}</a>
+                                <a class="nav-link" href="{{ route('navettes.index') }}">Gestion Navettes</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('outlets.index') }}">Gestion Etablisements</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

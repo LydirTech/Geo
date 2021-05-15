@@ -4,8 +4,8 @@ return [
     // Labels
     'outlet'        => 'etablisement',
     'list'          => 'Liste etablisement',
-    'search'        => 'Search Outlet',
-    'search_text'   => 'Name ...',
+    'search'        => 'Recherche Etablisement',
+    'search_text'   => 'Nom ...',
     'all'           => 'All Outlet',
     'select'        => 'Select Outlet',
     'detail'        => 'Outlet Detail',
